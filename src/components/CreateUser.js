@@ -53,7 +53,7 @@ const CreateUser = () => {
     validate,
     onSubmit: async (values) => {
       try {
-        await axios.post('http://localhost:5000/addusers', values);
+        await axios.post('https://node-appbackend.herokuapp.com/addusers', values);
         navigate('/');
       } catch (error) {
         console.log('cant able to post');
