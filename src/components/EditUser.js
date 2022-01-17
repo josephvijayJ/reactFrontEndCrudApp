@@ -45,7 +45,7 @@ const EditUser = () => {
   useEffect(async () => {
     try {
       const reqUser = await axios.get(
-        `http://localhost:5000/users/${params.id}`
+        `https://node-appbackend.herokuapp.com/${params.id}`
       );
       console.log(reqUser.data);
       formik.setValues(reqUser.data);
@@ -68,7 +68,7 @@ const EditUser = () => {
       console.log(values);
       console.log(params.id);
       try {
-        await axios.put(`http://localhost:5000/users/${params.id}`, values);
+        await axios.put(`https://node-appbackend.herokuapp.com/users/${params.id}`, values);
         navigate('/');
       } catch (error) {
         console.log(error);
