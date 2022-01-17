@@ -33,7 +33,7 @@ const Allusers = () => {
 
   useEffect(async () => {
     try {
-      let data = await axios.get('http://localhost:5000/users');
+      let data = await axios.get('https://node-appbackend.herokuapp.com/users');
       console.log(data);
       setUserList([...data.data]);
     } catch (error) {
@@ -42,7 +42,7 @@ const Allusers = () => {
   }, []);
 
   const fetchUsers = () => {
-    axios.get('http://localhost:5000/users').then((data) => {
+    axios.get('https://node-appbackend.herokuapp.com/users').then((data) => {
       console.log(data.data);
       setUserList([...data.data]);
     });
@@ -54,7 +54,7 @@ const Allusers = () => {
       console.log('the deleting id :' + id);
       let surity = window.confirm('Are you sure,to delete Data ?');
       if (surity) {
-        await axios.delete(`http://localhost:5000/users/delete/${id}`);
+        await axios.delete(`https://node-appbackend.herokuapp.com/users/delete/${id}`);
         fetchUsers();
       }
     } catch (error) {
